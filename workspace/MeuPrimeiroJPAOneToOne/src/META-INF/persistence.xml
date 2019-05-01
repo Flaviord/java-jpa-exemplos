@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="targetPU" transaction-type="RESOURCE_LOCAL">
+    
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    
+    <class>br.com.targettrust.persistencia.model.Usuario</class>
+    <class>br.com.targettrust.persistencia.model.Endereco</class>
+    <class>br.com.targettrust.persistencia.model.Telefone</class>
+    
+    <properties>
+        
+      <!-- Database connection settings -->
+		<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+		<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/CadastroJPA" />
+		<property name="hibernate.connection.username" value="postgres" />
+		<property name="hibernate.connection.password" value="postgres" />
+		
+		<!-- SQL dialect -->
+		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+
+		<!-- Configuração do C3P0 // Database Connection Pooling for use in Production -->
+		<!-- 
+		   C3PO mantem a conexão aberta caso o hibernate necessite 
+			para performance dos comandos DDL-SQL      
+		-->
+		
+		<property name="hibernate.c3p0.max_size" value="10" />
+		<property name="hibernate.c3p0.min_size" value="2" />
+		<property name="hibernate.c3p0.timeout" value="5000" />
+		<property name="hibernate.c3p0.max_statements" value="10" />
+		<property name="hibernate.c3p0.idle_test_period" value="3000" />
+		<property name="hibernate.c3p0.acquire_increment" value="2" />
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="hibernate.show_sql" value="true" />
+		<property name="hibernate.generate_statistics" value="false" />
+		<property name="hibernate.use_sql_comments" value="true" />
+		<property name="hibernate.format_sql" value="true" />
+
+		<!-- Create, Drop and re-create, or Update the database schema on startup -->
+		<property name="hibernate.hbm2ddl.auto" value="update" /> 
+<!-- 		<property name="hibernate.hbm2ddl.auto" value="create" />  -->
+<!-- 		<property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,16 @@
+<usuarios>
+  <usuario>
+    <nome>Fla Rigues</nome>
+    <rg>100000003</rg>
+    <cpf>00888888877</cpf>
+    <dataNasc>2013-07-28 03:00:00.0 UTC</dataNasc>
+    <salario>1550.78</salario>
+  </usuario>
+  <usuario>
+    <nome>Flavio Rodrigues</nome>
+    <rg>1232143</rg>
+    <cpf>99988866677</cpf>
+    <dataNasc>2013-07-18 03:00:00.0 UTC</dataNasc>
+    <salario>2550.78</salario>
+  </usuario>
+</usuarios>
